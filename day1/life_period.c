@@ -18,13 +18,15 @@ int main(void)
 		pause();
 		_exit(0);
 	} else {
-#if 1 /* define 1 to make child process always a zomie */
+#if 0 /* define 1 to make child process always a zomie */
 		printf("ppid:%d\n", getpid());
 		while(1);
 #endif
 		do {
-			wait_pid=waitpid(pid, &status, WUNTRACED | WCONTINUED);
-
+			/* 两句代码相同的效果, 从内核版本2.6.30之后，直接写为0就可以了 */
+			//wait_pid=waitpid(pid, &status, WUNTRACED | WCONTINUED);
+			wait_pid=waitpid(pid, &status, /*WUNTRACED | WCONTINUED*/0);
+			//printf("current pid:%d\n", getpid());
 			if (wait_pid == -1) {
 				perror("cannot using waitpid function");
 				exit(1);

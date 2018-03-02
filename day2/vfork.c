@@ -13,7 +13,7 @@ int child_process()
 }
 
 int main(int argc, char* argv[])
-{
+{// vfork 子进程共享父进程的虚拟空间和物理地址，和父进程完全一样, 所以子进程更改数据，父进程数据也会发生变化
 	if(vfork()==0) {
 		child_process();	
 	}

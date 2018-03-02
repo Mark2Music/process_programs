@@ -16,8 +16,10 @@ int child_process()
 int main(int argc, char* argv[])
 {
 	int pid;
-	pid = fork();
-
+	//写时复制技术，当父子进程试图修改相应段的行为时，为子进程分配独立的物理空间
+    //fork之后，子进程先执行还是父进程先执行，取决于操作系统的调度策略
+	//本机是 父进程先执行
+    pid = fork();
 	if(pid==0) {
 		child_process();
 	}
