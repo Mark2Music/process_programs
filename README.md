@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 打通Linux脉络系列：进程、线程和调度
 
 本课程分成4个组成部分，每次课60分钟。每次课后会留下3~4个练习题，可以在微信群或者Linuxer公众号留言讨论答案和做题心得。
@@ -63,3 +64,7 @@
 * 用taskset调整多线程依附的CPU
 * 创建和分群CPU的cgroup，调整权重和quota
 * cyclictest
+=======
+# process_programs
+This is the Process/Thread  how to create and how to work
+>>>>>>> 046c6bcabb9d198af3e5d4a9bada9f117180eaea
